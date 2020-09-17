@@ -64,6 +64,9 @@ struct ChangePassword: View {
                     self.presentationMode.wrappedValue.dismiss()
                 })
         }
+        .onDisappear {
+            self.changePasswordViewModel.resetData()
+        }
     }
 }
 

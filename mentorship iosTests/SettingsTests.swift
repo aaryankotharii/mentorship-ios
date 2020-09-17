@@ -136,7 +136,7 @@ class SettingsTests: XCTestCase {
         // Set mock data
         changePasswordVM.changePasswordData = ChangePasswordModel.ChangePasswordUploadData(currentPassword: "old", newPassword: "new")
         changePasswordVM.confirmPassword = "new"
-        changePasswordVM.changePasswordResponseData = ChangePasswordModel.ChangePasswordResponseData(message: "", success: false)
+        changePasswordVM.changePasswordResponseData = ChangePasswordModel.ChangePasswordResponseData(message: "test", success: true)
 
         // reset data of View Model
         changePasswordVM.resetData()

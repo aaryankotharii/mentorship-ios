@@ -27,11 +27,11 @@ struct ChangePassword: View {
         VStack(spacing: DesignConstants.Form.Spacing.bigSpacing) {
             //input fields
             VStack(spacing: DesignConstants.Form.Spacing.smallSpacing) {
-                TextField("Current Password", text: $changePasswordViewModel.changePasswordData.currentPassword)
+                SecureField("Current Password", text: $changePasswordViewModel.changePasswordData.currentPassword)
                     .textFieldStyle(RoundFilledTextFieldStyle())
-                TextField("New Password", text: $changePasswordViewModel.changePasswordData.newPassword)
+                SecureField("New Password", text: $changePasswordViewModel.changePasswordData.newPassword)
                     .textFieldStyle(RoundFilledTextFieldStyle())
-                TextField("Confirm Password", text: $changePasswordViewModel.confirmPassword)
+                SecureField("Confirm Password", text: $changePasswordViewModel.confirmPassword)
                     .textFieldStyle(RoundFilledTextFieldStyle())
             }
             
@@ -62,6 +62,7 @@ struct ChangePassword: View {
                 dismissButton: .default(Text(LocalizableStringConstants.okay)) {
                     //pop navigation view after okay button pressed
                     self.presentationMode.wrappedValue.dismiss()
+                    self.changePasswordViewModel.changePasswordResponseData.success = true
                 })
         }
         .onDisappear {

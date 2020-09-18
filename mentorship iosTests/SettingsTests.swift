@@ -128,8 +128,7 @@ class SettingsTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
-    func testChangePasswordReset() throws {
-        
+    func testChangePasswordReset() {
         // View Model
         let changePasswordVM = ChangePasswordViewModel()
 
